@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <title>添加编号</title>
+    <style type="text/css">
+        div>div {
+           counter-increment: mycounter;
+        }
+        div>div:before {
+            content: counter(mycounter) '.';
+            font-size: 20pt;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>疯狂Java讲义</div>
+    <div>疯狂Android讲义</div>
+    <div>轻量级Java EE企业应用实战</div>
+</div>
+</body>
+</html>

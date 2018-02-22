@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta>
-<http-equiv="Content-type" content="text/html"; charset="UTF-8">
-</meta>
+<meta http-equiv="Content-type" content="text/html"; charset="UTF-8">
 <title>模板</title>
 </head>
 <body>
@@ -11,7 +9,7 @@
 	<input type="color" id="color" name="color"/><span></span><br/>
 	<input type="range" id="range" name="range"/><span></span><br/>
 	<input type="submit" value="提交"/>
-<form/>
+</form>
 <script>
 	var spans = document.getElementsByTagName('span');
 	spans[0].innerHTML = document.getElementById("color").value;
@@ -20,7 +18,7 @@
 		spans[1].innerHTML = range.value;
 	}
 </script>
-<body>
+</body>
 </html>
 
 

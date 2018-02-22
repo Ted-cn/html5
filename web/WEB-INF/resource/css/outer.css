@@ -1,0 +1,11 @@
+table {
+    background-color: #003366;
+    width: 400px;
+}
+
+td {
+    background-color: #fff;
+    font-family: "Ώ¬Με_GBK2312";
+    font-size: 20pt;
+    text-shadow: -8px 6px 2px #333;
+}

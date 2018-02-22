@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html" charset="UTF-8">
+<title>模板</title>
+</head>
+<body>
+    浏览图片：<input type="file" id="images" multiple accept="image/*"/><br/>
+<input type="button" value="显示文件" onclick="showDetails();"/>
+<script type="text/javascript">
+    function showDetails () {
+        var imageEle = document.getElementById("images");
+        //获取文件上传域内的多个文件
+        var fileList = imageEle.files;debugger;
+        for(var i=0;i<fileList.length;i++) {
+            var file = fileList[i],
+                div = document.createElement("div");
+            div.innerHTML = "第"+ ( i + 1 ) +"个文件的文件名是"+ file.name +
+                    "，该文件类型是"+ file.type +"，该文件大小为" + file.size;
+            document.body.appendChild(div);
+        }
+    }
+</script>
+</body>
+</html>

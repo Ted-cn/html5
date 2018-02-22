@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+        div {
+            width: 300px;
+            height: 30px;
+            background-color: #eee;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        div[id] {
+            background-color: #aaa;
+        }
+        div[id*=xx] {
+            background-color: #999;
+        }
+        div[id^=xx] {
+            background-color: #555;
+            color: #fff;
+        }
+        div[id=xx] {
+            background-color: #111;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div>没有任何属性</div>
+<div id="a">带id属性</div>
+<div id="zzxx">id包含xx</div>
+<div id="xxyy">id以xx开头</div>
+<div id="xx">id为xx</div>
+</body>
+</html>

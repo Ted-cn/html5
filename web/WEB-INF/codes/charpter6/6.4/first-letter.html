@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <title>:first-letter</title>
+    <style type="text/css">
+        span {
+            display: block;
+        }
+        /* 由于span是内联元素（行内元素）因此需要先把span的display设为block */
+        span:first-letter {
+            color: #f00;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+<span>abc</span>
+<section>其实我是一个<br/>程序员</section>
+<p>疯狂Java讲义</p>
+</body>
+</html>

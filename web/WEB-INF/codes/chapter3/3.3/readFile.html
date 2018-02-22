@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html" charset="UTF-8">
+<title>模板</title>
+</head>
+<body>
+浏览文件：<input type="file" id="file"/><br/>
+<div id="result"></div>
+<input type="button" value="读取文本文件" onclick="readText();"/>
+<input type="button" value="读取二进制文件" onclick="readBinary();"/>
+<input type="button" value="以DataURL方式读取" onclick="readURL();"/>
+<script type="text/javascript">
+    var reader = null;
+    //是否支持FileReader对象
+    if(FileReader) {
+        reader = new FileReader();
+    } else {
+        alert("浏览器不支持FileReader")
+    }
+
+    //显示结果
+    var result = document.getElementById("result");
+
+    var readText = function () {
+        //通过正则表达式验证第一个文件文件是否为文本文件
+        //用户选择的第一个文件
+        var file = document.getElementById("file").files[0];
+        if(/text\/\w+/.test(file.type)) {
+            reader.readAsText(file, "UTF-8");
+            //当reader读取数据完成时将会触发该函数
+            reader.onload = function () {
+                result.innerHTML = reader.result;
+            }
+        } else {
+            alert("你选择的文件不是文本文件");
+        }
+    }
+
+    var readBinary = function () {
+        //用户选择的第一个文件
+        var file = document.getElementById("file").files[0];
+        reader.readAsBinaryString(file);
+        reader.onload = function () {
+            result.innerHTML = reader.result;
+        }
+    }
+
+    var readURL = function () {
+        //用户选择的第一个文件
+        var file = document.getElementById("file").files[0];
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            result.innerHTML = reader.result;
+        }
+    }
+</script>
+</body>
+</html>

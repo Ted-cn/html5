@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html" charset="UTF-8">
+<title>模板</title>
+</head>
+<body>
+<form action="http://www.baidu.com" method="get">
+    图书名：<input type="text" name="name" required/><br/>
+    图书ISBN：<input type="text" name="isbn"/><br/>
+    图书价格：<input type="number" name="price" required
+                pattern="\d{3}-\d-\d{3}-\d{5}" min="20" max="150" step="5"/><br/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>
